@@ -3,6 +3,9 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+
+var port = process.env.PORT || 3000;
+
 io.on('connection', function(socket) {
 
 	console.log("Connected 1");
@@ -22,7 +25,7 @@ io.on('connection', function(socket) {
 app.use(express.static(__dirname + "/") );
 
 
-http.listen('3000', function(){
+http.listen(port, function(){
 
 	console.log("Connected");
 
