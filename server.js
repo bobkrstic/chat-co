@@ -7,9 +7,9 @@ var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 
 
-io.listen(port, function(){
-	console.log("Listening on io port");
-});
+// io.listen(port, function(){
+// 	console.log("Listening on io port");
+// });
 
 io.on('connection', function(socket) {
 
