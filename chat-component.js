@@ -6,7 +6,7 @@ var ChatApp = window.React.createClass({
 	getInitialState: function(){
 		return {
 			messages: [],
-			socket: window.io('http://localhost:3000'),
+			socket: window.io('https://localhost:3000'),
 			user: undefined
 		};
 	},
