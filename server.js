@@ -29,7 +29,7 @@ io.on('connection', function(socket) {
 
 
 // var staticAsset = require('static-asset');
-//app.use(express.static(__dirname + "/") );
+app.use(express.static(__dirname + "/") );
 
 
 
