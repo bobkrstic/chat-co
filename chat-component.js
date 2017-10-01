@@ -9,7 +9,8 @@ var ChatApp = window.React.createClass({
 		return {
 			messages: [],
 			//socket: window.io('https://localhost:3000'),
-			socket: window.io('https://secure-spire-22112.herokuapp.com/'),
+			socket: window.io('https://secure-spire-22112.herokuapp.com/')
+			.open("https://secure-spire-22112.herokuapp.com/", "chat-co", "width=500, height=500");
 			user: undefined
 		};
 	},
