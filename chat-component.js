@@ -1,5 +1,7 @@
 // import React from 'react';
 // import ReactDOM from 'react-dom';
+//
+// import 'index.css';
 
 var ChatApp = window.React.createClass({
 
@@ -28,11 +30,13 @@ var ChatApp = window.React.createClass({
 
 		var message = {
 			body: body,
-			user: this.state.user || "guest"
+			user: this.state.user || "guest "
 		};
 
 		this.state.socket.emit("new-message", message);
 		// console.log(message);
+
+		document.getElementById("message").value = "";
 	},
 
 	pickUser: function(){
@@ -49,13 +53,19 @@ var ChatApp = window.React.createClass({
 		});
 
 		return(
-			<div> 
-				<ul>
-					{messages}
-				</ul>
-
-				<input id="message" type="text"/><button onClick={() => self.submitMessage()}> Send Message </button><br/>
-				<input id="user" type="text" placeholder="choose a username"/><button onClick={() => self.pickUser()}> Select User </button>
+			<div className='container'>
+				<div className="jumbotron">
+					<ul>
+						{messages}
+					</ul>
+					<div>
+							<input id="message" type="text"/>
+							<button id="messageButton" className='btn' onClick={() => self.submitMessage()}> Send Message </button>
+							<br /><br />
+							<input id="user" type="text" placeholder="choose a username" />
+							<button className='btn' onClick={() => self.pickUser()}>Select User </button>
+					</div>
+				</div>
 			</div>
 		);
 	}

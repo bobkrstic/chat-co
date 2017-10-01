@@ -8,16 +8,66 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script>var socket = io();</script>
 	</head>
 
+	<style>
+	input, ul {
+	    padding: 9px;
+	    border: solid 1px #E5E5E5;
+	    outline: 0;
+	    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+	    width: 200px;
+	    /*background: #FFFFFF;*/
+			-webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+			box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+			-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+			-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+			background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+    	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+
+	 }
+
+	 ul {
+	    width: auto;
+	    /*max-width: 200px;*/
+	    height: 150px;
+	    line-height: 150%;
+			overflow: scroll;
+    }
+
+	input:hover, input:focus {
+	    border-color: #C9C9C9;
+			-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+	 }
+
+	</style>
+
 	<body>
-
-		<div id="chat"></div>
-
+				<div id="chat"></div>
 	</body>
 
+	<script>
 
+		$(document).ready(function() {
+ 		// executes when HTML-Document is loaded and DOM is ready
+ 			//alert("document is ready");
+			window.open("https://secure-spire-22112.herokuapp.com/", "", "width=500, height=500");
+		});
+
+
+		$("#chat").keyup(function(event){
+			if(event.keyCode == 13){
+				$("#messageButton").click();
+			}
+		});
+	</script>
 
 	<script type="text/babel" src="chat-component.js"></script>
 </html>
