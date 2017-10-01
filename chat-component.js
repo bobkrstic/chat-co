@@ -30,7 +30,7 @@ var ChatApp = window.React.createClass({
 
 		var message = {
 			body: body,
-			user: this.state.user || "guest "
+			user: this.state.user || "guest"
 		};
 
 		this.state.socket.emit("new-message", message);
@@ -39,16 +39,20 @@ var ChatApp = window.React.createClass({
 		document.getElementById("message").value = "";
 	},
 
+	newChat: function() {
+		alert("here goes code for new chat room");
+	},
+
 	pickUser: function(){
 		var user = document.getElementById("user").value;
-		this.setState({user: user});
+		this.setState({user:user});
 	},
 
 	render: function(){
 		var self = this;
 		var messages = this.state.messages.map(function(msg){
 			return  (
-				<li><strong>{msg.user}: </strong><span>{msg.body}</span></li>
+				<li><strong>{msg.user}:<span>{" "}{" "}</span></strong><span>{msg.body}</span></li>
 			);
 		});
 
@@ -74,7 +78,22 @@ var ChatApp = window.React.createClass({
 							</div>
 					</div>
 				</div>
+
+				<div className="container">
+					<div className="row">
+						<input id="chatGroup" type="text" placeholder="choose a group name" />
+						<button className='btn' onClick={() => self.newChat()}> New Chat </button>
+					</div>
+				</div>
+
+				<br />
+
+				<div className="jumbotron">
+						Advertise your company and reach billion people at once. LOL
+				</div>
+
 			</div>
+
 		);
 	}
 
