@@ -7,6 +7,10 @@ var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 
 
+
+app.get('/', function(req,res){
+	res.sendFile(__dirname + '/index.html');
+})
 //io.listen(port);
 
 io.on('connection', function(socket) {
@@ -14,7 +18,7 @@ io.on('connection', function(socket) {
 	console.log("Connected 1");
 	socket.on("new-message", function(msg){
 
-		console.log(msg);
+		//console.log(msg);
 		io.emit("receive-message", msg);
 
 	})
@@ -25,7 +29,7 @@ io.on('connection', function(socket) {
 
 
 // var staticAsset = require('static-asset');
-app.use(express.static(__dirname + "/") );
+//app.use(express.static(__dirname + "/") );
 
 
 
