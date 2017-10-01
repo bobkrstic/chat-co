@@ -48,22 +48,30 @@ var ChatApp = window.React.createClass({
 		var self = this;
 		var messages = this.state.messages.map(function(msg){
 			return  (
-				<li><strong>{msg.user}</strong><span>{msg.body}</span></li>
+				<li><strong>{msg.user}: </strong><span>{msg.body}</span></li>
 			);
 		});
 
 		return(
-			<div className='container'>
+			<div className='container-fluid'>
 				<div className="jumbotron">
-					<ul>
-						{messages}
-					</ul>
-					<div>
-							<input id="message" type="text"/>
-							<button id="messageButton" className='btn' onClick={() => self.submitMessage()}> Send Message </button>
-							<br /><br />
-							<input id="user" type="text" placeholder="choose a username" />
-							<button className='btn' onClick={() => self.pickUser()}>Select User </button>
+					<div className="container-fluid">
+							<div className="row">
+								<ul>
+									{messages}
+								</ul>
+							</div>
+							<div className="row">
+										<input id="message" type="text"/>
+	  			 					<button id="messageButton" className='btn' onClick={() => self.submitMessage()}> Send </button>
+			  			</div>
+							<br />
+							<div className="row">
+								<div id="inputAndButton">
+										<input id="user" type="text" placeholder="choose a username" />
+										<button className='btn' onClick={() => self.pickUser()}> User </button>
+								</div>
+							</div>
 					</div>
 				</div>
 			</div>
