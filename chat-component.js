@@ -89,7 +89,7 @@ var ChatApp = window.React.createClass({
 				<br />
 
 				<div className="jumbotron">
-						Advertise your company and reach billion people at once. LOL
+						Advertise your company and reach a billion people at once. LOL
 				</div>
 
 			</div>
