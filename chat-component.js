@@ -35,7 +35,6 @@ var ChatApp = window.React.createClass({
 
 		this.state.socket.emit("new-message", message);
 		// console.log(message);
-
 		document.getElementById("message").value = "";
 	},
 
@@ -57,10 +56,12 @@ var ChatApp = window.React.createClass({
 		});
 
 		return(
-			<div className='container-fluid'>
+			<div className='container-fluid wrapper'>
+				<div className="mainTitle">chat-co</div>
 				<div className="jumbotron">
+
 					<div className="container-fluid">
-							<div className="row">
+							<div className="row" id="textChatArea">
 								<ul>
 									{messages}
 								</ul>
@@ -82,7 +83,7 @@ var ChatApp = window.React.createClass({
 				<div className="container">
 					<div className="row">
 						<input id="chatGroup" type="text" placeholder="choose a group name" />
-						<button className='btn' onClick={() => self.newChat()}> New Chat </button>
+						<button className='btn' id="newChat" onClick={() => self.newChat()}> New Chat </button>
 					</div>
 				</div>
 

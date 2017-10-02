@@ -18,6 +18,50 @@
 
 	<style>
 
+	.mainTitle {
+		font-weight: bold;
+		font-size: 150%;
+		color: rgb(239,179,85);
+		text-shadow: 2px 1px 2px #FF0000;
+		padding-left: 5px;
+		padding-bottom: 10px;
+		position: relative;
+		/*float: right;*/
+		-webkit-animation: mymove 0.5s; /* Safari 4.0 - 8.0 */
+		animation: mymove 0.5s;
+	}
+
+	.mainTitle {-webkit-animation-timing-function: linear;}
+	.mainTitle {animation-timing-function: linear;}
+
+	@-webkit-keyframes mymove {
+    from {left: 0px;}
+    to {left: 270px;}
+}
+
+	/* Standard syntax */
+	@keyframes mymove {
+	    from {left: 0px;}
+	    to {left: 270px;}
+	}
+
+	.jumbotron {
+		/*background: #B4BBC2;*/
+		border: 1px solid rgb(226,174,83);
+	}
+
+	.wrapper {
+		margin-top: 30px;
+	}
+
+	body {
+		/*background: #8B8E96;*/
+		/*background: url("images/background1.jpg");*/
+		/*background: rgb(249,225,149)*/
+		background: -webkit-gradient(linear, left top, left 25, from(#3B3B3B), color-stop(4%, #EEEEEE), to(#3B3B3B));
+
+	}
+
 	input, ul {
 	    padding: 9px;
 	    border: solid 1px #E5E5E5;
@@ -31,7 +75,7 @@
 			-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
 			-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
 			background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
-    	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+    	background: -moz-linear-gradient(top, #F2C672, #EEEEEE 1px, #F2C672 25px);
 			/*max-width: 200px;*/
 	 }
 
@@ -44,7 +88,8 @@
     }
 
 	input:hover, input:focus {
-	    border-color: #C9C9C9;
+	    /*border-color: #C9C9C9;*/
+			border-color: rgb(59,59,59);
 			-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
 	 }
 
@@ -58,6 +103,25 @@
 
 	 button {
 		 float: right;
+		 background: rgb(59,59,59);
+		 color: white;
+	 }
+
+	 button:hover {
+		 border: 1px solid rgb(238,189,79);
+	 }
+
+	 .btn:hover{
+		 color: rgb(164,163,147);
+	 }
+
+	 #newChat {
+		 background: rgb(239,179,85);
+		 color: rgb(59,59,59);
+	 }
+
+	 #newChat:hover {
+		 background: rgb(120,108,71);
 	 }
 
 
