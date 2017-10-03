@@ -9,12 +9,14 @@ var ChatApp = window.React.createClass({
 		return {
 			messages: [],
 			//socket: window.io('https://localhost:3000'),
-			socket: window.io('https://secure-spire-22112.herokuapp.com/'),
+			socket: window.io('http://localhost:3000/'),
 			user: undefined
 		};
 	},
 
 	componentDidMount: function(){
+
+		window.open("https://secure-spire-22112.herokuapp.com/", "chat-co", "width=500, height=600");
 		var self = this;
 		this.state.socket.on("receive-message", function(msg){
 			// console.log(msg);

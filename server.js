@@ -15,6 +15,7 @@ app.get('/', function(req,res){
 
 io.on('connection', function(socket) {
 
+	reconnect: false;
 	console.log("Connected 1");
 	socket.on("new-message", function(msg){
 
