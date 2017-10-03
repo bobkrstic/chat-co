@@ -15,7 +15,10 @@ app.get('/', function(req,res){
 
 io.on('connection', function(socket) {
 
-	reconnect: false;
+
+	// window.open("http://localhost:3000/", "chat-co", "width=500, height=600")
+
+	// reconnect: false;
 	console.log("Connected 1");
 	socket.on("new-message", function(msg){
 
