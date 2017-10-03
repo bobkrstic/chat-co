@@ -14,11 +14,14 @@ var ChatApp = window.React.createClass({
 		};
 	},
 
+
 	componentDidMount: function(){
 
 		// window.open("http://localhost:3000/", "chat-co", "width=500, height=600");
 
-
+		// window.resizeTo(250, 250);                             // Resizes the new window
+    // window.focus();
+		window.open('https://secure-spire-22112.herokuapp.com/', 'chat-co', 'width=500, height=500');
 		var self = this;
 
 		// self.moveWindow();
