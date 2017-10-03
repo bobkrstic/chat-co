@@ -22,7 +22,8 @@
 		font-weight: bold;
 		font-size: 150%;
 		color: rgb(239,179,85);
-		text-shadow: 2px 1px 2px #FF0000;
+		/*color: black;*/
+		text-shadow: 2px 1px 8px pink;
 		padding-left: 5px;
 		padding-bottom: 10px;
 		position: relative;
@@ -122,6 +123,15 @@
 
 	 #newChat:hover {
 		 background: rgb(120,108,71);
+		 border: 1px solid black;
+		 text-shadow: 2px 1px 8px pink;
+		 color: white;
+	 }
+
+	 #insertImage {
+		 height: 60px;
+		 width: 300px;
+		 object-fit: contain;
 	 }
 
 
@@ -133,11 +143,35 @@
 
 	<script>
 
-		// $(document).ready(function() {
- 	// 	// executes when HTML-Document is loaded and DOM is ready
- 	// 		//alert("document is ready");
-		// 	window.open("https://secure-spire-22112.herokuapp.com/", "chat-co", "width=500, height=500");
-		// });
+		$(document).ready(function() {
+ 		// executes when HTML-Document is loaded and DOM is ready
+ 			//alert("document is ready");
+			window.open("https://secure-spire-22112.herokuapp.com/", "chat-co", "width=500, height=600");
+
+
+
+			$(function () {
+			    var body = $('#insertImage');
+			    var backgrounds = [
+			      'url("images/mercedes.png")',
+			      'url(http://static.jsbin.com/images/popout.png)',
+						'url("/images/background.jpg")',
+						'url("/images/mercedes.png")',
+						'url(http://st.motortrend.com/uploads/sites/10/2016/09/2017-mercedes-benz-sl-450-convertible-angular-front.png)'];
+			    var current = 0;
+
+			    function nextBackground() {
+			        body.css(
+			            'background',
+			        backgrounds[current = ++current % backgrounds.length]);
+
+			        setTimeout(nextBackground, 5000);
+			    }
+			    setTimeout(nextBackground, 5000);
+			    body.css('background', backgrounds[0]);
+			});
+
+		});
 
 		// window.setInterval(function() {
   	// 	var elem = document.getElementsByTagName('UL')[0];

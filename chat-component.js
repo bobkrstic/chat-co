@@ -21,6 +21,8 @@ var ChatApp = window.React.createClass({
 			var messages = self.state.messages;
 			messages.push(msg);
 			self.setState({messages: messages});
+			var elem = document.getElementsByTagName('UL')[0];
+			elem.scrollTop = elem.scrollHeight;
 			console.log(self.state.messages);
 		});
 	},
@@ -89,8 +91,8 @@ var ChatApp = window.React.createClass({
 
 				<br />
 
-				<div className="jumbotron">
-						Advertise your company and reach billion people at once. LOL
+				<div className="jumbotron" id="advertisements">
+						<img id="insertImage"/>
 				</div>
 
 			</div>
