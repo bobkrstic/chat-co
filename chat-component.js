@@ -2,7 +2,6 @@
 // import ReactDOM from 'react-dom';
 //
 // import 'index.css';
-
 var ChatApp = window.React.createClass({
 
 	getInitialState: function(){
@@ -11,25 +10,28 @@ var ChatApp = window.React.createClass({
 			//socket: window.io('https://localhost:3000'),
 			socket: window.io('https://secure-spire-22112.herokuapp.com/'),
 			user: undefined
+			// func: window.open('https://secure-spire-22112.herokuapp.com/sadfa','','width=500,height=500')
 		};
 	},
 
+	// resizeWindow: function(myWindow) {
+	// 	myWindow.resizeTo(500,500);
+	// 	myWindow.focus();
+	// },
+	//
+	//
 	// openWindow: function(){
-	// 	window.open('https://secure-spire-22112.herokuapp.com/', 'chat-co', 'width=500, height=500');
-	// 	reconnect: false;
+	// 	var myWindow = window.open('https://secure-spire-22112.herokuapp.com/','','width=500, height=500');
+	// // return false;
+	// 	this.resizeWindow(myWindow);
 	// },
 
 
 	componentDidMount: function(){
-
-		// window.open("http://localhost:3000/", "chat-co", "width=500, height=600");
-
-		// window.resizeTo(250, 250);                             // Resizes the new window
-    // window.focus();
-		// this.openWindow();
+			// console.log(this.state.socket);
+		// window.open("https://secure-spire-22112.herokuapp.com/d", "chat-co", "width=500, height=700");
+		 //this.openWindow();
 		var self = this;
-
-		// self.moveWindow();
 		this.state.socket.on("receive-message", function(msg){
 			// console.log(msg);
 			var messages = self.state.messages;
@@ -78,7 +80,7 @@ var ChatApp = window.React.createClass({
 
 		return(
 			<div className='container-fluid wrapper'>
-				<div className="mainTitle">chat-co</div>
+				<div className="mainTitle">CHAT-CO</div>
 				<div className="jumbotron">
 
 					<div className="container-fluid">
@@ -110,8 +112,8 @@ var ChatApp = window.React.createClass({
 
 				<br />
 
-				<div className="jumbotron" id="advertisements">
-						<img id="insertImage"/>
+				<div className="jumbotron advertisements">
+						<div className="insertImage"></div>
 				</div>
 
 			</div>
